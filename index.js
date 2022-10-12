@@ -27,10 +27,24 @@
             name:'Ali Hasan',
             age:45
         }
-    ];
-    // TO-DO
-    // Promise object/function here
-    // 2 params, 1: list, 2: target to match
-    // return: Promise, resolve: list after filteration, reject: error message
-    // TO-DO
+  ];
+  
+  // solve
+  const solve = function (PERSONS, target) {
+    return firstPromise = new Promise((resolve, reject) => {
+      let result = PERSONS.filter(function (el) {
+          if (el) return el.age == target;
+        });
+      
+        if (result.length > 0) {
+          resolve(result);
+        } else {
+          reject("data not found !!");
+        }
+        });
+  };
+   solve(PERSONS, 45)
+     .then((res) => console.log(res))
+     .catch((e) => console.log(e));
+  
 })();
