@@ -35,10 +35,8 @@
 
   //sol
   const solPromis = new Promise((filtration, reject) => {
-    let newPerson = PERSONS.filter((person) => person != undefined);
-    const sol = newPerson.map((element) => {
-      return JSON.parse(element.age > 0 ? element.age : null);
-    });
+    let newPersons = PERSONS.filter((person) => person != undefined);
+    const sol = newPersons.filter((element) => element.age == 45);
 
     if (sol.length > 0) {
       filtration(sol);
