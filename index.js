@@ -1,4 +1,3 @@
-
 (async () => {
     console.log('App Started');
     const PERSONS = [
@@ -29,8 +28,12 @@
             age: 45
         }
     ];
-
-    filteringPersonsAges(PERSONS, 30)
+    console.log("people with same age are found: \n")
+    await filteringPersonsAges(PERSONS, 30)
+        .then((res) => console.log(res))
+        .catch((e) => console.log(e))
+    console.log("people with same age are not found: \n")
+    await filteringPersonsAges(PERSONS, 50)
         .then((res) => console.log(res))
         .catch((e) => console.log(e))
 
