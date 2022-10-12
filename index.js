@@ -28,9 +28,24 @@
             age:45
         }
     ];
-    // TO-DO
-    // Promise object/function here
-    // 2 params, 1: list, 2: target to match
-    // return: Promise, resolve: list after filteration, reject: error message
-    // TO-DO
+    const myFilter = (names, myAge)=>{
+        const myPromis = new Promise((resolve, reject) =>{
+            let result = names.filter(ele=>{
+                return ele? ele.age == myAge ? ele: '': ''
+            })
+            if(result){
+                resolve(result);
+            }
+            else {
+                reject('Not Find...');
+            }
+        })
+        
+        myPromis.then(
+            (resolveValue)=>console.log(resolveValue)
+        ).catch((err)=>{console.log(err)
+        })
+        .finally(()=>console.log('The Promis Is Done...'));
+    }
+    myFilter(PERSONS,45);
 })();
