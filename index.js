@@ -21,16 +21,28 @@
             name:'Nabeel Fawzi',
             age:45
         },
-        undefined
-        ,
+    undefined ,
         {
             name:'Ali Hasan',
             age:45
         }
     ];
-    // TO-DO
-    // Promise object/function here
-    // 2 params, 1: list, 2: target to match
-    // return: Promise, resolve: list after filteration, reject: error message
-    // TO-DO
+
+    let p=new Promise((res,error)=>{
+        let target =16;
+        
+       let b= PERSONS.filter((item)=>{
+     
+ if((item)&&(item.age==target))
+ return item;
+    } )
+    if(b.length>0)res(b); else error('invalid target');
+} )
+    
+  p.then((res)=>{
+    console.log(res);
+  })
+  .catch((err)=>{console.error(err);
+})
+  
 })();
