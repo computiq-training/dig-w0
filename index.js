@@ -33,4 +33,38 @@
     // 2 params, 1: list, 2: target to match
     // return: Promise, resolve: list after filteration, reject: error message
     // TO-DO
+    
+    // Start My Code
+    function getByAge(list , target_age) {
+        
+        return new Promise((resolve,reject)=>{
+        
+            if ((newList = list.filter(item => item !== undefined).filter(item => item.age == target_age)))
+            {
+                resolve('Execution Success');
+            } else {
+                reject('Execution Failed');
+            }
+        })
+        
+        .then((value)=>{ // Resolved
+            console.log("Message :", value) // just to confirm
+            if (newList.length > 0){
+                return newList;
+            }else{
+                return "List Is Empty From Target Age";
+            }
+        })
+        
+        .catch((error)=>{ //rejected
+            return "An Error Occurred ^_^ ... \n" + error;
+        })
+        
+    }
+    
+    const return_list = await getByAge(PERSONS, 45);
+    console.log("Return List :", return_list);
+
+    // End My Code
+
 })();
