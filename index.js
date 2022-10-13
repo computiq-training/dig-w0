@@ -33,4 +33,18 @@
     // 2 params, 1: list, 2: target to match
     // return: Promise, resolve: list after filteration, reject: error message
     // TO-DO
-})();
+    
+    const filtering = function(myList,filter){
+       
+        return promise = new Promise ((resolve, reject) => {
+            // filtering people that match the condition
+            people = myList.filter(myList => myList && myList.age == filter);
+            // checking if there is a result from the above condition (as a list) / return error is there is no one found
+            people.length > 0 ? resolve(people) : reject('No person with this age found!');       
+        })
+        .then(result => 
+            console.log(result) 
+        ).catch(err=> console.log(err))   
+    }
+        filtering(PERSONS, 16);    
+})()
