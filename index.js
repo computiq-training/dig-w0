@@ -33,7 +33,7 @@
             let result = names.filter(ele=>{
                 return ele? ele.age == myAge ? ele: '': ''
             })
-            if(result){
+            if(result.length > 0){
                 resolve(result);
             }
             else {
@@ -47,5 +47,5 @@
         })
         .finally(()=>console.log('The Promis Is Done...'));
     }
-    myFilter(PERSONS,45);
+    myFilter(PERSONS,1);
 })();
