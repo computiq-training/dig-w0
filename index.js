@@ -33,4 +33,19 @@
     // 2 params, 1: list, 2: target to match
     // return: Promise, resolve: list after filteration, reject: error message
     // TO-DO
+    const Flist=function (list,target){
+        return new Promise((resolve, reject)=>{
+            let newList = list.filter(list =>list!==undefined? list['age'] === target:null)
+            if (newList.length!==0)
+                resolve(newList);
+            else
+                reject('Age not found')
+            }
+        ).then((result)=>{return result},
+        (error)=>{return error}
+            );
+
+        }
+    console.log(await (Flist(PERSONS, 45)))
+
 })();
