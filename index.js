@@ -21,8 +21,8 @@
             name:'Nabeel Fawzi',
             age:45
         },
-        // undefined
-        // ,
+        undefined
+        ,
         {
             name:'Ali Hasan',
             age:45
@@ -35,7 +35,7 @@
     // TO-DO
     const Flist=function (list,target){
         return new Promise((resolve, reject)=>{
-            let newList = list.filter(list => list['age'] === target)
+            let newList = list.filter(list =>list!==undefined? list['age'] === target:null)
             if (newList.length!==0)
                 resolve(newList);
             else
