@@ -33,4 +33,16 @@
     // 2 params, 1: list, 2: target to match
     // return: Promise, resolve: list after filteration, reject: error message
     // TO-DO
+    var filtered = PERSONS.filter(Boolean);
+    let target=45;
+let p = new Promise((resolve,reject)=>{
+      const arr=filtered.filter(item => item.age==target);
+      let s= (arr.length > 0)? resolve(arr):reject('age not found');
+})
+// using the promise
+p.then((val)=>{ // Resolved
+    console.log(val)
+}).catch((err)=>{ //rejected
+    console.log(err)
+})
 })();
