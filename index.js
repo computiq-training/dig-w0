@@ -37,14 +37,8 @@
   // This is my function
   function filter(arr, target) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
         let filterd = arr.filter(x => x !== undefined && x.age == target);
-        if (filterd.length > 0) {
-          resolve(filterd);
-        } else {
-          reject("Not Found");
-        }
-      }, 2000);
+        filterd.length > 0 ? resolve(filterd) :reject("Not Found");
     });
   }
   
