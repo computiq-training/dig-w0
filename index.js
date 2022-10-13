@@ -28,9 +28,23 @@
             age:45
         }
     ];
-    // TO-DO
-    // Promise object/function here
-    // 2 params, 1: list, 2: target to match
-    // return: Promise, resolve: list after filteration, reject: error message
-    // TO-DO
-})();
+    
+    
+    const filter = function(data,condition){
+       
+        return  new Promise ((resolve, reject) => {
+            
+            hh = data.filter(data => data && data.age == condition);
+           
+            if (hh.length > 0){
+                resolve(hh)
+            } else {
+                reject('not found')
+            }     
+        })
+        .then(r => 
+            console.log(r) 
+        ).catch(err=> console.log(err))   
+    }
+        filter(PERSONS, 45);    
+})()
