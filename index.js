@@ -33,4 +33,21 @@
     // 2 params, 1: list, 2: target to match
     // return: Promise, resolve: list after filteration, reject: error message
     // TO-DO
+    function filterfind(key){
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+              if(key.name==='Ali Hasan' && key.age>=45){
+                resolve(key);
+              }  
+              else{
+                reject('promise is rejected')
+    
+              }
+            }, 1);
+        });   
+    }
+    function find(){
+        return Promise.all(PERSONS.filter(filterfind));
+    }
+    
 })();
