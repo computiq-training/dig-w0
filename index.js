@@ -21,7 +21,7 @@
             name:'Nabeel Fawzi',
             age:45
         },
-        
+        undefined
         ,
         {
             name:'Ali Hasan',
@@ -37,7 +37,7 @@
 
     const fun =(list1, Target=45)=>{
         return promis = new Promise((resolve,reject)=>{
-        const Fillterd_list= PERSONS.filter((person)=> Target== person.age)
+        const Fillterd_list= PERSONS.filter((person)=> person && person.age === Target)
            
 
         let conditon= true
