@@ -48,7 +48,7 @@ const pro =(list1, Target=45)=>{
         if (conditon) {
             resolve(Fillterd_list);
           } else {
-            reject("err");
+            reject("eror");
           }
 
 
