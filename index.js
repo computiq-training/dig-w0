@@ -29,8 +29,27 @@
         }
     ];
     // TO-DO
-    // Promise object/function here
-    // 2 params, 1: list, 2: target to match
-    // return: Promise, resolve: list after filteration, reject: error message
-    // TO-DO
+
+    const locPerson = (pers, Target = 16)=>{
+        return pro = new Promise((resolve,reject)=>{
+            const user = PERSONS.filter(PERSONS => PERSONS && PERSONS.age === Target);
+
+            if (user){
+                resolve(user)
+            }
+            else{
+                reject("No person with this age was found")
+            }
+        });
+        
+    }
+    
+    locPerson().then((res) => { 
+        console.log(res)
+    }) 
+    .catch((error) => {
+        console.log(error)
+    })
+    
 })();
+
