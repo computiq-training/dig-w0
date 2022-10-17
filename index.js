@@ -33,4 +33,14 @@
     // 2 params, 1: list, 2: target to match
     // return: Promise, resolve: list after filteration, reject: error message
     // TO-DO
+    const function_ = (names,target=45)=>{
+        return promis = new Promise((resolve,reject)=>{
+            const ageFilter = names.filter(person=>person && person.age == target);
+            result.length>0 ? resolve(ageFilter) 
+            : reject("error")
+        });
+    }
+    function_(PERSONS,1).then(result => console.log(result)
+    ).catch(error => console.log(error)
+    ).finally(() => console.log("Done"));
 })();
