@@ -28,32 +28,23 @@
             age:45
         }
     ];
-    // TO-DO
-    // Promise object/function here
-    // 2 params, 1: list, 2: target to match
-    // return: Promise, resolve: list after filteration, reject: error message
-    // TO-DO
-    // console.log('This is first change')
-//     const Promise = new Promise((resolve , reject) => {
-//         Data && data.age === condition (edited)
-                    
-//     })
-// })();
 
-const lookUp = (pers, Target = 5)=>{
-    return p = new Promise((resolve,reject)=>{
-        const filteredpersons = pers.filter(person => person && person.age == Target);
-        if (filteredpersons.length > 0){
-            resolve(filteredpersons)
-        }
-        else{
-            reject("error")
-        }
-    });
-}
-
-
-    lookUp(PERSONS,5).then((result) => {console.log(result)})
-    .catch((error) => {console.log(error)})
-
-})();
+    const lookUp = (pers, Target = 5)=>{
+        return p = new Promise((resolve,reject)=>{
+            const filteredPersons = pers.filter(p => p && p.age == Target);
+            if (filteredPersons.length > 0){
+                resolve(filteredPersons)
+            }
+            else{
+                reject("error")
+            }
+        });
+    }
+        lookUp(PERSONS,45)
+        .then((result) => {
+            console.log(result)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    })();
