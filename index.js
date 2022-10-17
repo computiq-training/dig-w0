@@ -28,9 +28,23 @@
             age:45
         }
     ];
+
     // TO-DO
     // Promise object/function here
     // 2 params, 1: list, 2: target to match
     // return: Promise, resolve: list after filteration, reject: error message
     // TO-DO
+    let agefilter = (info, type) => {
+        let prom = new promise (resolve, reject) => {
+            let filteredage = info.filter(person => {
+                if (person) return person.age === type;
+            })
+            if (filteredage.length >0) resolve(filteredage);
+            else reject("Unknown");
+            
+            prom.then(val= console.log(val))
+            .catch (val = console.log(error))
+        }
+    }
+    agefilter(PERSONS, 45)
 })();
