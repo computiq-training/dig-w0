@@ -29,15 +29,6 @@
         }
     ];
 
-    
-    let p = ((resolve, error)=>{
-        if (PERSONS.age == 45) {
-            resolve()
-        }
-        else {
-            reject("unknown");
-        }
-    })
     // TO-DO
     // Promise object/function here
     // 2 params, 1: list, 2: target to match
