@@ -28,9 +28,23 @@
             age:45
         }
     ];
-    // TO-DO
-    // Promise object/function here
-    // 2 params, 1: list, 2: target to match
-    // return: Promise, resolve: list after filteration, reject: error message
-    // TO-DO
-})();
+
+    const lookUp = (pers, Target = 5)=>{
+        return p = new Promise((resolve,reject)=>{
+            const filteredPersons = pers.filter(p => p && p.age == Target);
+            if (filteredPersons.length > 0){
+                resolve(filteredPersons)
+            }
+            else{
+                reject("error")
+            }
+        });
+    }
+        lookUp(PERSONS,45)
+        .then((result) => {
+            console.log(result)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    })();
