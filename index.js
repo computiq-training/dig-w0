@@ -30,8 +30,8 @@
     ];
     const locate = (pers, Target = 45)=>{
         return p = new Promise((resolve,reject)=>{
-            const filteredpersons = pers.filter(PERSONS => PERSONS && PERSONS.age == Target);
-            if (45>0){
+            const filteredpersons = pers.filter(person => person && person.age == Target);
+            if (filteredpersons.length >0){
                 resolve(filteredpersons)
             }
             else{
